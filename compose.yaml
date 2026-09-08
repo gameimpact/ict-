@@ -1,0 +1,14 @@
+services:
+  ict-practice:
+    build: .
+    container_name: ict-practice
+    restart: unless-stopped
+    ports:
+      - "6400:6400"
+    volumes:
+      - ./data:/app/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "2"
